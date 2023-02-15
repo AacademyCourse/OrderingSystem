@@ -21,10 +21,6 @@ public class Role {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    private String roleName;
-
-    @ManyToMany(mappedBy = "roles")
-    @JsonBackReference
-    private Set<Customer> customers= new HashSet<>();
+    private String authority;
 
 }

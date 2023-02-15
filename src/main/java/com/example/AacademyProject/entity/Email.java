@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.UniqueElements;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,6 +19,7 @@ public class Email {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(unique = true)
     private String emailAddress;
 
     public Email(String email) {

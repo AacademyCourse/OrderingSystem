@@ -42,19 +42,18 @@ public class Customer {
 
     private Instant createdAt;
 
-    @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
     private Set<Order> orders = new HashSet<>();
 
 
-    @ManyToMany
-    @JsonManagedReference
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "customer_roles",
             joinColumns = {@JoinColumn(name = "customer_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")}
     )
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles;
 
 
 }
