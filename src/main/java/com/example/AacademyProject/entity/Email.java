@@ -20,4 +20,7 @@ public class Email {
 
     private String emailAddress;
 
+    public Email(String email) {
+        this.setEmailAddress(email);
+    }
 }
